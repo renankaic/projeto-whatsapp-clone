@@ -7,12 +7,22 @@ export class CameraController {
         navigator.mediaDevices.getUserMedia({
             video: true
         }).then(stream => {
-
-            this._videoEl.src = URL.createObjectURL(stream);
+            
+            this._stream = stream;
+            let mediaStream = new MediaStream(this._stream);
+            this._videoEl.srcObject = mediaStream;
             this._videoEl.play();
 
         }).catch(error => {
             console.error(error);
+        });
+
+    }
+
+    stop() {
+
+        this._stream.getTracks().forEach(track => {
+            track.stop()
         });
 
     }

@@ -207,6 +207,7 @@ export default class WhatsAppController {
 
         this.el.btnClosePanelCamera.on('click', e => {
 
+            this._camera.stop();
             this.closeAllMainPanel()
             this.el.panelCamera.removeClass('open')
             this.el.panelMessagesContainer.show()
