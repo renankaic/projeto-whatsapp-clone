@@ -369,7 +369,7 @@ export default class WhatsAppController {
 
         this.el.btnFinishMicrophone.on('click', e => {
 
-            this._microphoneController.stop()
+            this._microphoneController.stopRecorder()
             this.closeRecordMicrophone()
 
         })
