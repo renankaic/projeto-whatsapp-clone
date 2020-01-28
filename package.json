@@ -19,8 +19,12 @@
   },
   "homepage": "https://github.com/renankaic/projeto-whatsapp-clone#readme",
   "dependencies": {
+    "@firebase/auth": "^0.13.4",
+    "@firebase/auth-types": "^0.9.4",
+    "@firebase/firestore": "^1.9.3",
+    "firebase": "^7.7.0",
     "pdfjs-dist": "^2.0.489",
     "webpack": "^3.1.0",
-    "webpack-dev-server": "^2.5.1"
+    "webpack-dev-server": "^1.0.0"
   }
 }
