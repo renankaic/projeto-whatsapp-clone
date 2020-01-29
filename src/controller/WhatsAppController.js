@@ -11,9 +11,28 @@ export default class WhatsAppController {
         console.log("WhatsApp Controller OK")
 
         //Loads all elements from HTML
+        this._firebase = new Firebase()
+        this.initAuth()
         this.loadElementsPrototype()
         this.loadElements()
         this.initEvents()
+
+    }
+
+    initAuth() {
+
+        this._firebase.initAuth()
+            .then(response => {
+                
+                this._user = response.user
+                this.el.appContent.css({
+                    display:'flex'
+                })
+
+            })
+            .catch(err => {
+                console.error(err)
+            })
 
     }
 

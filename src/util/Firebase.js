@@ -46,4 +46,28 @@ export class Firebase {
 
     }
 
+    initAuth() {
+
+        return new Promise((success, fail) => {
+
+            let provider = new firebase.auth.GoogleAuthProvider()
+
+            firebase.auth().signInWithPopup(provider)
+                .then(result => {
+
+                    const token = result.credential.accessToken
+                    const user = result.user
+
+                    success({
+                        user,
+                        token
+                    })
+
+                })
+                .catch(err => fail(err))
+
+        })
+
+    }
+
 }
